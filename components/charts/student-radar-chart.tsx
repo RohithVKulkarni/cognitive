@@ -93,7 +93,7 @@ export function StudentRadarChart({ data }: StudentRadarChartProps) {
           <div className="space-y-6">
             <div className="text-center">
               <h3 className="text-lg font-semibold">{selectedStudent.name}</h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-muted-foreground">
                 Class: {selectedStudent.class} | Assessment Score: {selectedStudent.assessment_score}% | Engagement:{" "}
                 {selectedStudent.engagement_time}m
               </p>
@@ -104,7 +104,7 @@ export function StudentRadarChart({ data }: StudentRadarChartProps) {
                 <div key={item.skill} className="text-center">
                   <div className="relative w-24 h-24 mx-auto mb-2">
                     <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
-                      <circle cx="50" cy="50" r="40" stroke="#e5e7eb" strokeWidth="8" fill="none" />
+                      <circle cx="50" cy="50" r="40" stroke="hsl(var(--border))" strokeWidth="8" fill="none" />
                       <circle
                         cx="50"
                         cy="50"
@@ -118,15 +118,15 @@ export function StudentRadarChart({ data }: StudentRadarChartProps) {
                       />
                     </svg>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-lg font-bold text-gray-700">{item.value}%</span>
+                      <span className="text-lg font-bold text-foreground">{item.value}%</span>
                     </div>
                   </div>
-                  <div className="text-sm font-medium text-gray-700">{item.skill}</div>
+                  <div className="text-sm font-medium text-foreground">{item.skill}</div>
                 </div>
               ))}
             </div>
 
-            <div className="grid grid-cols-2 gap-4 text-sm bg-gray-50 p-4 rounded-lg">
+            <div className="grid grid-cols-2 gap-4 text-sm bg-muted p-4 rounded-lg">
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span>Comprehension:</span>

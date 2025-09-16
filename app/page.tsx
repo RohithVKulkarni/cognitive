@@ -7,6 +7,7 @@ import { OverviewStatsComponent } from "@/components/overview-stats"
 import { StudentTable } from "@/components/student-table"
 import { ChartsDashboard } from "@/components/charts-dashboard"
 import { MLInsights } from "@/components/ml-insights"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -46,12 +47,15 @@ export default function HomePage() {
                 <p className="text-muted-foreground">Analyze student cognitive data and performance metrics</p>
               </div>
             </div>
-            {studentData.length > 0 && (
-              <Button variant="outline" onClick={handleReset} className="flex items-center gap-2 bg-transparent">
-                <Upload className="h-4 w-4" />
-                Upload New Data
-              </Button>
-            )}
+            <div className="flex items-center gap-3">
+              <ThemeToggle />
+              {studentData.length > 0 && (
+                <Button variant="outline" onClick={handleReset} className="flex items-center gap-2 bg-transparent">
+                  <Upload className="h-4 w-4" />
+                  Upload New Data
+                </Button>
+              )}
+            </div>
           </div>
         </div>
       </header>

@@ -76,7 +76,7 @@ export function ClassPerformanceChart({ data }: ClassPerformanceChartProps) {
             <div key={classInfo.class} className="space-y-3">
               <div className="flex justify-between items-center">
                 <h4 className="font-medium text-lg">{classInfo.class}</h4>
-                <span className="text-sm text-gray-500">
+                <span className="text-sm text-muted-foreground">
                   {classInfo.studentCount} student{classInfo.studentCount !== 1 ? "s" : ""}
                 </span>
               </div>
@@ -86,7 +86,7 @@ export function ClassPerformanceChart({ data }: ClassPerformanceChartProps) {
                   <span>Average Score</span>
                   <span className="font-medium">{classInfo.averageScore}%</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
+                <div className="w-full bg-muted rounded-full h-3">
                   <div
                     className="bg-cyan-600 h-3 rounded-full transition-all duration-700"
                     style={{ width: `${(classInfo.averageScore / maxScore) * 100}%` }}
@@ -99,7 +99,7 @@ export function ClassPerformanceChart({ data }: ClassPerformanceChartProps) {
                   <span>Average Engagement</span>
                   <span className="font-medium">{classInfo.averageEngagement}m</span>
                 </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
+                <div className="w-full bg-muted rounded-full h-3">
                   <div
                     className="bg-purple-500 h-3 rounded-full transition-all duration-700"
                     style={{ width: `${(classInfo.averageEngagement / maxEngagement) * 100}%` }}
@@ -110,7 +110,7 @@ export function ClassPerformanceChart({ data }: ClassPerformanceChartProps) {
           ))}
         </div>
 
-        <div className="mt-6 text-sm text-gray-600 bg-gray-50 p-3 rounded-lg">
+        <div className="mt-6 text-sm text-muted-foreground bg-muted/50 p-3 rounded-lg">
           <p>Classes ordered by average assessment score (highest to lowest)</p>
           <div className="flex gap-4 mt-2">
             <div className="flex items-center gap-2">

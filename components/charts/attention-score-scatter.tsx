@@ -49,9 +49,9 @@ export function AttentionScoreScatter({ data }: AttentionScoreScatterProps) {
         <CardDescription>Relationship between attention levels and assessment performance</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="relative h-[300px] border border-gray-200 rounded-lg p-4 bg-gray-50">
+        <div className="relative h-[300px] border border-border rounded-lg p-4 bg-card">
           {/* Y-axis labels */}
-          <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-gray-500 py-4">
+          <div className="absolute left-0 top-0 h-full flex flex-col justify-between text-xs text-muted-foreground py-4">
             <span>100%</span>
             <span>75%</span>
             <span>50%</span>
@@ -60,7 +60,7 @@ export function AttentionScoreScatter({ data }: AttentionScoreScatterProps) {
           </div>
 
           {/* X-axis labels */}
-          <div className="absolute bottom-0 left-8 right-4 flex justify-between text-xs text-gray-500">
+          <div className="absolute bottom-0 left-8 right-4 flex justify-between text-xs text-muted-foreground">
             <span>0%</span>
             <span>25%</span>
             <span>50%</span>
@@ -91,10 +91,10 @@ export function AttentionScoreScatter({ data }: AttentionScoreScatterProps) {
           </div>
 
           {/* Axis labels */}
-          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-sm font-medium text-gray-700">
+          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 text-sm font-medium text-foreground">
             Attention Level (%)
           </div>
-          <div className="absolute left-2 top-1/2 transform -translate-y-1/2 -rotate-90 text-sm font-medium text-gray-700">
+          <div className="absolute left-2 top-1/2 transform -translate-y-1/2 -rotate-90 text-sm font-medium text-foreground">
             Assessment Score (%)
           </div>
         </div>
