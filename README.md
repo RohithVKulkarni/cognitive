@@ -4,95 +4,66 @@ A comprehensive Next.js dashboard for analyzing student cognitive data and perfo
 
 ---
 
-## 🚀 Features
+## Features
 
-### 📊 Data Management
-- **CSV Upload**: Drag-and-drop interface for student data
-- **Automatic Validation**: Ensures required columns and correct data ranges
-- **Real-time Processing**: Client-side CSV parsing with Papa Parse
+### Data Management
+- CSV Upload: Drag-and-drop interface for student data
+- Automatic Validation: Ensures required columns and correct data ranges
+- Real-time Processing: Client-side CSV parsing with Papa Parse
 
-### 📈 Analytics Dashboard
-- **Overview Statistics**: Key performance metrics and cognitive skill averages
-- **Correlation Analysis**: Relationships between cognitive skills and assessment scores
-- **Class Distribution**: Visual breakdown of student distribution across classes
+### Analytics Dashboard
+- Overview Statistics: Key performance metrics and cognitive skill averages
+- Correlation Analysis: Relationships between cognitive skills and assessment scores
+- Class Distribution: Visual breakdown of student distribution across classes
 
-### 👥 Student Management
-- **Interactive Table**: Searchable and sortable student data
-- **Advanced Filtering**: Filter by class, search by name/ID
-- **Performance Indicators**: Color-coded skill levels and assessment scores
+### Student Management
+- Interactive Table: Searchable and sortable student data
+- Advanced Filtering: Filter by class, search by name/ID
+- Performance Indicators: Color-coded skill levels and assessment scores
 
-### 📊 Data Visualization
-- **Bar Charts**: Compare cognitive skills and assessment performance
-- **Scatter Plots**: Attention vs assessment score relationships
-- **Radar Charts**: Individual student cognitive profiles
-- **Class Performance**: Comparative analysis across classes
+### Data Visualization
+- Bar Charts: Compare cognitive skills and assessment performance
+- Scatter Plots: Attention vs assessment score relationships
+- Radar Charts: Individual student cognitive profiles
+- Class Performance: Comparative analysis across classes
 
-### 🤖 Machine Learning Insights
-- **Linear Regression**: Predicts assessment scores from cognitive skills
-- **K-means Clustering**: Identifies learning personas
-- **Performance Predictions**: Actual vs predicted score analysis
-- **AI-Generated Insights**: Automated recommendations
-
----
-
-## 📄 Required CSV Format
-
-| Column            | Type    | Range   | Description                       |
-|-------------------|---------|---------|-----------------------------------|
-| `student_id`      | Integer | Unique  | Student identifier                |
-| `name`            | String  | -       | Student name                      |
-| `class`           | String  | -       | Class/grade level                 |
-| `comprehension`   | Float   | 0.0-1.0 | Comprehension skill level         |
-| `attention`       | Float   | 0.0-1.0 | Attention skill level             |
-| `focus`           | Float   | 0.0-1.0 | Focus skill level                 |
-| `retention`       | Float   | 0.0-1.0 | Retention skill level             |
-| `assessment_score`| Float   | 0-100   | Assessment score percentage       |
-| `engagement_time` | Float   | Minutes | Time spent engaged                |
+### Machine Learning Insights
+- Linear Regression: Predicts assessment scores from cognitive skills
+- K-means Clustering: Identifies learning personas
+- Performance Predictions: Actual vs predicted score analysis
+- AI-Generated Insights: Automated recommendations
 
 ---
 
-## 🛠️ Getting Started
+## Required CSV Format
 
-### Prerequisites
-- Node.js 18+
-- npm or yarn
-
-### Installation
-
-```sh
-git clone <repository-url>
-cd cognitive-dashboard
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+| Column            | Type    | Description                       |
+|-------------------|---------|-----------------------------------|
+| `student_id`      | Integer | Student identifier                |
+| `name`            | String  | Student name                      |
+| `class`           | String  | Class/grade level                 |
+| `comprehension`   | Float   | Comprehension skill level         |
+| `attention`       | Float   | Attention skill level             |
+| `focus`           | Float   | Focus skill level                 |
+| `retention`       | Float   | Retention skill level             |
+| `assessment_score`| Float   | Assessment score percentage       |
+| `engagement_time` | Float   | Time spent engaged (minutes)      |
 
 ---
 
-## 💡 Usage
+## Technology Stack
 
-1. **Upload Data**: Use the drag-and-drop interface to upload your CSV file.
-2. **Explore Overview**: View key statistics and correlations.
-3. **Analyze Students**: Search and filter individual records.
-4. **Visualize Data**: Explore interactive charts.
-5. **ML Insights**: Review machine learning analysis and recommendations.
-
----
-
-## 🧑‍💻 Technology Stack
-
-- **Framework**: Next.js (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS v4
-- **Charts**: Recharts
-- **CSV Processing**: Papa Parse
-- **File Upload**: React Dropzone
-- **UI Components**: shadcn/ui
+- Framework: Next.js (App Router)
+- Language: TypeScript
+- Styling: Tailwind CSS v4
+- Charts: Recharts
+- CSV Processing: Papa Parse
+- File Upload: React Dropzone
+- UI Components: shadcn/ui
 
 ---
 
-## 🤖 Machine Learning Features
+## Machine Learning Features
 
 ### Linear Regression Model
 - Predicts assessment scores based on cognitive skills
@@ -105,13 +76,13 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - Provides actionable insights for educators
 
 ### Learning Personas
-- **High Achiever**: Strong across all cognitive skills
-- **Balanced Learner**: Moderate, consistent performance
-- **Developing Student**: Areas for improvement identified
+- High Achiever: Strong across all cognitive skills
+- Balanced Learner: Moderate, consistent performance
+- Developing Student: Areas for improvement identified
 
 ---
 
-## 🌐 Deployment
+## Deployment
 
 Optimized for Vercel:
 
@@ -121,14 +92,14 @@ Optimized for Vercel:
 
 ---
 
-## 📊 Summary of Findings
+## Summary of Findings
 
 This dashboard empowers educators with:
-- **Data-driven insights** into student cognitive patterns
-- **Predictive analytics** for early intervention
-- **Visual representations** of complex educational data
-- **Personalized learning** recommendations through clustering
-- **Performance tracking** across multiple dimensions
+- Data-driven insights into student cognitive patterns
+- Predictive analytics for early intervention
+- Visual representations of complex educational data
+- Personalized learning recommendations through clustering
+- Performance tracking across multiple dimensions
 
 Use this tool to make informed decisions about student support, curriculum adjustments, and personalized learning strategies.
 
