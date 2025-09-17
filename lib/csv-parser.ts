@@ -52,12 +52,15 @@ const createFieldMapping = (headers: string[]): Record<string, string> => {
   return mapping
 }
 
+// Helper to scale cognitive features to [0, 1]
+const scaleFeature = (value: number) => value > 1 ? value / 100 : value
+
 export const parseCSV = (file: File): Promise<StudentData[]> => {
   return new Promise((resolve, reject) => {
     Papa.parse(file, {
       header: true,
       skipEmptyLines: true,
-      complete: (results) => {
+      complete: (results: { errors: string | any[]; data: any[] }) => {
         if (results.errors.length > 0) {
           reject(new Error("CSV parsing failed: " + results.errors[0].message))
           return
@@ -106,9 +109,13 @@ export const parseCSV = (file: File): Promise<StudentData[]> => {
                   "engagement_time",
                 ].includes(standardField)
               ) {
-                const numValue = Number.parseFloat(String(value).replace(/[^\d.-]/g, ""))
+                let numValue = Number.parseFloat(String(value).replace(/[^\d.-]/g, ""))
                 if (isNaN(numValue)) {
                   throw new Error(`Invalid ${standardField}: "${value}" (should be a number)`)
+                }
+                // Scale cognitive features to [0, 1]
+                if (["comprehension", "attention", "focus", "retention"].includes(standardField)) {
+                  numValue = scaleFeature(numValue)
                 }
                 transformedRow[standardField] = numValue
               } else {
@@ -158,7 +165,7 @@ export const parseCSV = (file: File): Promise<StudentData[]> => {
 
         resolve(validData)
       },
-      error: (error) => {
+      error: (error: any) => {
         reject(error)
       },
     })
