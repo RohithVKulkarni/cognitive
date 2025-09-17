@@ -7,11 +7,13 @@ import { OverviewStatsComponent } from "@/components/overview-stats"
 import { StudentTable } from "@/components/student-table"
 import { ChartsDashboard } from "@/components/charts-dashboard"
 import { MLInsights } from "@/components/ml-insights"
+import { ReportGenerator } from "@/components/report-generator"
+import { ExportManager } from "@/components/export-manager"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Brain, Users, TrendingUp, BarChart3, Upload, Table, PieChart } from "lucide-react"
+import { Brain, Users, TrendingUp, BarChart3, Upload, Table, PieChart, FileText, Download } from "lucide-react"
 import { calculateOverviewStats, calculateCorrelations, getClassDistribution } from "@/lib/analytics"
 
 export default function HomePage() {
@@ -105,7 +107,7 @@ export default function HomePage() {
           </div>
         ) : (
           <Tabs defaultValue="overview" className="space-y-6">
-            <TabsList className="grid w-full grid-cols-4">
+            <TabsList className="grid w-full grid-cols-6">
               <TabsTrigger value="overview" className="flex items-center gap-2">
                 <BarChart3 className="h-4 w-4" />
                 Overview
@@ -121,6 +123,14 @@ export default function HomePage() {
               <TabsTrigger value="insights" className="flex items-center gap-2">
                 <TrendingUp className="h-4 w-4" />
                 ML Insights
+              </TabsTrigger>
+              <TabsTrigger value="reports" className="flex items-center gap-2">
+                <FileText className="h-4 w-4" />
+                Reports
+              </TabsTrigger>
+              <TabsTrigger value="export" className="flex items-center gap-2">
+                <Download className="h-4 w-4" />
+                Export
               </TabsTrigger>
             </TabsList>
 
@@ -144,6 +154,14 @@ export default function HomePage() {
 
             <TabsContent value="insights" className="space-y-6">
               <MLInsights data={studentData} />
+            </TabsContent>
+
+            <TabsContent value="reports" className="space-y-6">
+              <ReportGenerator data={studentData} />
+            </TabsContent>
+
+            <TabsContent value="export" className="space-y-6">
+              <ExportManager data={studentData} />
             </TabsContent>
           </Tabs>
         )}
